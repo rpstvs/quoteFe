@@ -1,11 +1,9 @@
 <template>
     <nav class="navbar">
       <div class="nav-title">Stoic Reflections</div>
+      <div class="nav-subtitle">For a Better Life and Motivation</div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Quotes</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Buy me a Coffee</a></li>
       </ul>
     </nav>
   </template>
@@ -62,6 +60,15 @@
   
   .nav-links a:hover {
     color: #8a7c70; /* Subtle color change on hover */
+  }
+
+  .nav-subtitle {
+    font-family: "Georgia", serif;
+  font-style: italic;
+    font-size: 1em;
+    color: #3e3e3e;
+    display: block;
+    align-content: left;
   }
   </style>
   

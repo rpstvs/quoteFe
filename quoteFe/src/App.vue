@@ -3,19 +3,27 @@
     <NavBar />
     <div class="content">
       <RandomQuote />
+  
+    </div>
+    <div class="desc">
+      
+      <AuthorDescription />
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
-import RandomQuote from './components/randomQuote.vue';
+import RandomQuote from './components/RandomQuote.vue';
+import AuthorDescription from './components/AuthorDescription.vue';
+
 
 export default {
   name: 'App',
   components: {
     NavBar,
-    RandomQuote
+    RandomQuote,
+    AuthorDescription
   }
 };
 </script>
@@ -28,13 +36,22 @@ html, body, #app {
   font-family: "Georgia", serif;
   background-color: #f4f1ed;
   color: #3e3e3e;
+  display: flex;
+  flex-direction: column;
+
+  column-gap: 100px;
 }
 
 .content {
-  padding-top: 80px; /* Adds space to prevent overlap with navbar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding-top: 150px; /* Adds space to prevent overlap with navbar */
+  align-self: center;
+}
+
+.desc {
+  padding-top: 30px; /* Adds space to prevent overlap with navbar */
+ 
+  align-self: center;
+  
+  
 }
 </style>

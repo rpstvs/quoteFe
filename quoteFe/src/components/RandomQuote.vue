@@ -1,9 +1,11 @@
 <template>
     <div class="quote-container">
       <div v-if="quote" class="quote">
-        "{{ quote }}"
+        {{ quote }}
       </div>
-      <button @click="fetchQuote">New Reflection</button>
+      <div  class="Author">
+        {{ author }} - {{ book }}
+      </div>
     </div>
   </template>
   
@@ -23,6 +25,8 @@
           }
           const data = await response.json();
           this.quote = data.quote;
+          this.author = data.author;
+          this.book = data.book;
         } catch (error) {
           console.error("Error fetching the quote:", error);
         }
@@ -46,6 +50,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
   }
   
   .quote-container {
@@ -53,40 +58,27 @@
     border: 1px solid #b5a998; /* Subtle border for structure */
     border-radius: 8px;
     padding: 20px;
-    max-width: 600px;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    
+    
   }
   
   .quote {
     font-size: 1.5em;
     font-style: italic;
-    margin-bottom: 20px;
     color: #3e3e3e; /* Soft dark color for the quote text */
   }
   
-  button {
-    background-color: #b5a998; /* Muted brown for a natural feel */
-    color: #f4f1ed;
-    font-family: "Georgia", serif;
-    font-size: 1em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .Author{
+    font-size: 1.25em;
+    padding-top: 20px;
+    color: #3e3e3e;
+    
+   
   }
   
-  button:hover {
-    background-color: #a49582; /* Slightly darker on hover */
-  }
   
-  button:focus {
-    outline: none;
-  }
-  
-  button:active {
-    background-color: #8a7c70;
-  }
   </style>
   
