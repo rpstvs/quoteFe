@@ -4,7 +4,7 @@
         {{ quote }}
       </div>
       <div  class="Author">
-        {{ author }} - {{ book }}
+        {{ author }} {{ book }}
       </div>
     </div>
   </template>
@@ -19,7 +19,7 @@
     methods: {
       async fetchQuote() {
         try {
-          const response = await fetch('http://localhost:8080/quote/random');
+          const response = await fetch('https://serverfibergo.onrender.com/quote/random');
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
@@ -27,6 +27,10 @@
           this.quote = data.quote;
           this.author = data.author;
           this.book = data.book;
+          if (this.book){
+            this.book = "- " + data.book
+          }
+
         } catch (error) {
           console.error("Error fetching the quote:", error);
         }

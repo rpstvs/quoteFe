@@ -1,76 +1,111 @@
 <template>
     <div class="Description">
-      <div v-if="quote" class="desc">
-        <img class="img" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOewZqrA4EpMIQQo3pOkIzTnkUN1hVQ1ZfNg&s">
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      <div class="desc">
+        <img class="img" v-bind:src=imglink>
+        <div class ="bio">{{ bio }}</div> 
+        <div class="break"></div>
+        <div class = "links">
+          <p v-for="(book,index) in books">
+          BUY {{ book.name }} on <a v-bind:href=book.link> AMAZON</a>
+          </p>
+       </div>
       </div>
-       
     </div>
   </template>
   
   <script>
   export default {
+    
     data() {
       return {
-        quote: null,
+        
+        bio: null,
+        imglink : null,
+        books: null,
       };
     },
     methods: {
-      async fetchQuote() {
+      async fetchAuthor() {
         try {
-          const response = await fetch('http://localhost:8080/quote/random');
+          const response = await fetch('https://serverfibergo.onrender.com/author/');
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
           const data = await response.json();
-          this.quote = data.quote;
-          this.author = data.author;
-          this.book = data.book;
+          this.bio = data.bio
+          this.imglink = data.imglink
+          this.books = data.books
         } catch (error) {
           console.error("Error fetching the quote:", error);
         }
       }
     },
     created() {
-      this.fetchQuote();
-    }
+      this.fetchAuthor();
+    },
+    
   };
   </script>
   
   <style scoped>
   /* Styling for a stoic aesthetic */
   
-  body {
-    font-family: "Georgia", serif;
-    background-color: #f4f1ed; /* Soft beige background */
-    color: #3e3e3e;            /* Dark grey text for readability */
-    margin: 0;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-   
-  }
   
  
   
   .desc {
+    font-family: "Georgia", serif;
+    background-color: #f4f1ed; /* Soft beige background */
+    color: #3e3e3e;
+    display: grid;
     font-size: 1em;
     flex-direction: row;
     margin-bottom: 20px;
     color: #3e3e3e; /* Soft dark color for the quote text */
-    display: flex;
-    justify-content:flex-end ;
+    flex-wrap:initial;
+    
+    text-align: justify;
+    text-justify: inter-word;
   }
-  
+
+  .bio{
+    grid-row: 1;
+    font-family: "Georgia", serif;
+    background-color: #f4f1ed; /* Soft beige background */
+    color: #3e3e3e;
+  }
+ 
   
   
   .img {
-    padding: 10px;
-    width: 300px;
+    grid-row: 1;
+    padding-right: 10px;
+    max-width: 150px;
     box-sizing: border-box;
     
     
   }
+
+  .links{
+    font-family: "Georgia", serif;
+    background-color: #f4f1ed; /* Soft beige background */
+    color: #3e3e3e;
+    font-size: 1.5em;
+    align-self: center;
+    text-align: center;         
+  display: flex;                
+  flex-direction: column;      
+  justify-content: center;     
+  align-items: center; 
+    
+  }
+
+  .links a {
+    color: #b55b5b;
+    text-decoration: none;
+  }
+
+
   
   </style>
   

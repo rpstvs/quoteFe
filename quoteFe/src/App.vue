@@ -6,7 +6,6 @@
   
     </div>
     <div class="desc">
-      
       <AuthorDescription />
     </div>
   </div>
@@ -39,7 +38,7 @@ html, body, #app {
   display: flex;
   flex-direction: column;
 
-  column-gap: 100px;
+  
 }
 
 .content {
