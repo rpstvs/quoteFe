@@ -3,7 +3,7 @@
       <div class="nav-title">Stoic Reflections</div>
       <div class="nav-subtitle">For a Better Life and Motivation</div>
       <ul class="nav-links">
-        <li><a href="#">Buy me a Coffee</a></li>
+        <li><a href="https://buymeacoffee.com/rpstvs">Buy me a Coffee</a></li>
       </ul>
     </nav>
   </template>

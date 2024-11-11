@@ -6,7 +6,7 @@
         <div class="break"></div>
         <div class = "links">
           <p v-for="(book,index) in books">
-          BUY {{ book.name }} on <a v-bind:href=book.link> AMAZON</a>
+          BUY {{ book.name }} on <a v-bind:href=book.link > AMAZON</a>
           </p>
        </div>
       </div>
