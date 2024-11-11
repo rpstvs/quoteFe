@@ -27,7 +27,7 @@
     methods: {
       async fetchAuthor() {
         try {
-          const response = await fetch('https://serverfibergo.onrender.com/author/');
+          const response = await fetch('https://serverfibergo-275473082968.europe-west2.run.app/author/');
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
