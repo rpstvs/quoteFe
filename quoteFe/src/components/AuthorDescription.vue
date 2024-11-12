@@ -80,7 +80,7 @@
   .img {
     grid-row: 1;
     padding-right: 10px;
-    max-width: 150px;
+    max-width:150px;
     box-sizing: border-box;
     
     
@@ -105,6 +105,18 @@
     text-decoration: none;
   }
 
+  @media (max-width: 800px) {
+  .desc {
+    
+    display: block; 
+  }
+
+  .img {
+    display: block;
+       margin-left: auto;
+      margin-right: auto;
+  }
+}
 
   
   </style>

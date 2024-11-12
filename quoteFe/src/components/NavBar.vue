@@ -3,7 +3,7 @@
       <div class="nav-title">Stoic Reflections</div>
       <div class="nav-subtitle">For a Better Life and Motivation</div>
       <ul class="nav-links">
-        <li><a href="https://buymeacoffee.com/rpstvs">Buy me a Coffee</a></li>
+        <li><a href="https://buymeacoffee.com/rpstvs" target="_blank">Buy me a Coffee</a></li>
       </ul>
     </nav>
   </template>
@@ -70,5 +70,22 @@
     display: block;
     align-content: left;
   }
+
+  @media (max-width: 800px) {
+  .nav-subtitle {
+    font-family: "Georgia", serif;
+  font-style: italic;
+    font-size: 0.75em;
+    color: #3e3e3e;
+    display: block;
+    align-content: left;
+  }
+
+  .nav-title {
+    font-family: "Georgia", serif;
+    font-size: 1em;
+    color: #3e3e3e;
+  }
+}
   </style>
   
