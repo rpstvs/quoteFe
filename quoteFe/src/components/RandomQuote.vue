@@ -6,6 +6,7 @@
       <div  class="Author">
         {{ author }} {{ book }}
       </div>
+      <i class="fas fa-copy copy-icon" @click="copyToClipboard"></i>
     </div>
   </template>
   
@@ -34,7 +35,8 @@
         } catch (error) {
           console.error("Error fetching the quote:", error);
         }
-      }
+      },
+      
     },
     created() {
       this.fetchQuote();
@@ -83,6 +85,16 @@
    
   }
   
+  .copy-icon {
+  
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #888;
+}
+.copy-icon:hover {
+  color: #555;
+}
   
   </style>
   
