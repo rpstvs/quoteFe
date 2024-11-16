@@ -55,7 +55,7 @@
   
   .desc {
     font-family: "Georgia", serif;
-    background-color: #f4f1ed; /* Soft beige background */
+    background-color: #FDF7E9; /* Soft beige background */
     color: #3e3e3e;
     display: grid;
     font-size: 1em;
@@ -71,7 +71,7 @@
   .bio{
     grid-row: 1;
     font-family: "Georgia", serif;
-    background-color: #f4f1ed; /* Soft beige background */
+    background-color: #FDF7E9; /* Soft beige background */
     color: #3e3e3e;
   }
  
@@ -81,14 +81,13 @@
     grid-row: 1;
     padding-right: 10px;
     max-width:150px;
-    box-sizing: border-box;
-    
-    
+ 
+    border-radius: 20px; 
   }
 
   .links{
     font-family: "Georgia", serif;
-    background-color: #f4f1ed; /* Soft beige background */
+    background-color: #FDF7E9; /* Soft beige background */
     color: #3e3e3e;
     font-size: 1.5em;
     align-self: center;

@@ -33,11 +33,10 @@ html, body, #app {
   height: 100%;
   margin: 0;
   font-family: "Georgia", serif;
-  background-color: #f4f1ed;
+  background-color: #FDF7E9;
   color: #3e3e3e;
   display: flex;
   flex-direction: column;
-
   
 }
 
