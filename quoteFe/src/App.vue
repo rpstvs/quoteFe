@@ -49,7 +49,8 @@ html, body, #app {
   padding-top: 30px; /* Adds space to prevent overlap with navbar */
  
   align-self: center;
-  
+  max-width: auto;
+  max-height: auto;
   
 }
 </style>

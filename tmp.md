@@ -1,56 +1,4 @@
-<template>
-    <div class="Description">
-      <div class="desc">
-        <img class="img" v-bind:src=imglink>
-        <div class ="bio">{{ bio }}
-
-          <div class = "links">
-          <p v-for="(book,index) in books">
-          BUY {{ book.name }} on <a v-bind:href=book.link > AMAZON</a>
-          </p>
-       </div>
-        </div> 
-        
-    
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    
-    data() {
-      return {
-        
-        bio: null,
-        imglink : null,
-        books: null,
-      };
-    },
-    methods: {
-      async fetchAuthor() {
-        try {
-          const response = await fetch('https://serverfibergo-275473082968.europe-west2.run.app/quote/random');
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          const data = await response.json();
-          this.bio = data.bio
-          this.imglink = data.imglink
-          this.books = data.books
-        } catch (error) {
-          console.error("Error fetching the quote:", error);
-        }
-      }
-    },
-    created() {
-      this.fetchAuthor();
-    },
-    
-  };
-  </script>
-  
-  <style scoped>
+<style scoped>
   /* Styling for a stoic aesthetic */
   
   
@@ -135,5 +83,3 @@
 
   
   </style>
-
-  
