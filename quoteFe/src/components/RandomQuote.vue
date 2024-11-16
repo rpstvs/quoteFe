@@ -36,7 +36,10 @@
           console.error("Error fetching the quote:", error);
         }
       },
-      
+      async copyToClipboard(){
+        
+        await navigator.clipboard.writeText(`${this.quote} - ${this.author} ${this.book}`);
+      }
     },
     created() {
       this.fetchQuote();
