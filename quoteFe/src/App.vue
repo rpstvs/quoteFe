@@ -41,13 +41,13 @@ html, body, #app {
 }
 
 .content {
-  padding-top: 150px; /* Adds space to prevent overlap with navbar */
+  padding-top: 100px; /* Adds space to prevent overlap with navbar */
   align-self: center;
 }
 
 .desc {
   padding-top: 30px; /* Adds space to prevent overlap with navbar */
- 
+  padding-bottom: 20px;
   align-self: center;
   max-width: auto;
   max-height: auto;

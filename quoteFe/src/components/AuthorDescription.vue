@@ -81,6 +81,7 @@
     flex-direction: row;
     width: auto;
     height: auto;
+    padding-bottom: 20px;
   }
 
   .bio{
