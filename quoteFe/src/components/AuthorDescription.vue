@@ -30,7 +30,7 @@
     methods: {
       async fetchAuthor() {
         try {
-          const response = await fetch('https://serverfibergo.onrender.com/author');
+          const response = await fetch('https://serverfibergo.onrender.com/quote/random');
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
