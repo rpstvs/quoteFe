@@ -20,7 +20,7 @@
     methods: {
       async fetchQuote() {
         try {
-          const response = await fetch('https://serverfibergo-275473082968.europe-west2.run.app/quote/random');
+          const response = await fetch('https://serverfibergo.onrender.com/quote/random');
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
